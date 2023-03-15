@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab-01 (NavBar)</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 10vh;
+        background-color: red;
+        color: black;
+      }
+
+      .menu-styling {
+        list-style-type: none;
+        background-color: lightgrey;
+        padding: 0;
+        margin: 0;
+      }
+      #main-menu {
+            list-style-type: none;
+            background-color: lightgray;
+            padding: 0;
+            margin: 0;
+        }
+
+      #main-menu > li {
+        display: inline;
+      }
+
+      #main-menu > li > a {
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+      }
+
+      ul > li > a:hover {
+        background-color: black;
+      }
+
+      #main-menu-item-2 {
+        position: relative;
+      }
+      #sub-menu-1 {
+        position: absolute;
+    
+        top: 29px;
+        /*If we set left to "0 px" then by deafult it will allign with the parent list position*/
+        left: 0px;
+       /*In this case for padding I used custom measurement
+       if all measurements are same then we can only say
+       "padding: 15px" the 15 pixel will apply on all sides like default*/
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 25px;
+       /*we dont want wrapping in menu items thats why we used wrap here*/
+        white-space: nowrap;
+       /*This will hide the sub menu at the inital time of openning the page*/
+        display: none;
+      }
+
+      #main-menu-item-3 {
+        position: relative;
+      }
+      #sub-menu-2 {
+        position: absolute;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 25px;
+        margin: 0px 0px;
+        top: 28px;
+        left: 0px;
+        white-space: nowrap;
+        display: none;
+      }
+
+      #main-menu-item-2:hover #sub-menu-1 {
+        display: block;
+      }
+
+      #main-menu-item-3:hover #sub-menu-2 {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h2>Demo of Dropdown</h2>
+    </header>
+
+    <nav>
+      <ul id="main-menu" class="menu-styling">
+        <li>
+          <a href="/link1">Link1</a>
+        </li>
+        <li id="main-menu-item-2">
+          <a href="/link2">Link2</a>
+
+          <ul id="sub-menu-1" class="menu-styling">
+            <li>
+              <a href="/dd-link1">DD_Link_1</a>
+            </li>
+            <li>
+              <a href="/dd-link2">DD_Link_2</a>
+            </li>
+            <li>
+              <a href="/dd-link3">DD_Link_3</a>
+            </li>
+          </ul>
+        </li>
+        <li id="main-menu-item-3">
+          <a href="/link3">Link3</a>
+
+          <ul id="sub-menu-2" class="menu-styling">
+            <li>
+              <a href="/dd-link1">DD_Link_1</a>
+            </li>
+            <li>
+              <a href="/dd-link2">DD_Link_2</a>
+            </li>
+            <li>
+              <a href="/dd-link3">DD_Link_3</a>
+            </li>
+            <li>
+              <a href="/dd-link4">DD_Link_4</a>
+            </li>
+            <li>
+              <a href="/dd-link5">DD_Link_5</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
